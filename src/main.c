@@ -21,14 +21,7 @@
 */
 
 #include "common.h"
-
-#ifdef _WIN32
-#define EXPORT __declspec(dllexport)
-#else
-#define EXPORT __attribute__((visibility("default")))
-#endif
-
-EXPORT int luaopen_mongo(lua_State *L);
+#include "lua-mongo/mongo.h"
 
 static int f_type(lua_State *L) {
 	luaL_checkany(L, 1);
